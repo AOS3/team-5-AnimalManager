@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:transitionGroup="true"
+    tools:context=".fragment.InputFragment">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/materialToolbarInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:menu="@menu/input_toolbar_menu" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/textViewType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="종류"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/toggleGroupInputType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            app:checkedButton="@id/buttonInputTypeDog"
+            app:singleSelection="true">
+
+            <Button
+                android:id="@+id/buttonInputTypeDog"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="강아지" />
+
+            <Button
+                android:id="@+id/buttonInputTypeCat"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="고양이" />
+
+            <Button
+                android:id="@+id/buttonInputTypeParrot"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="앵무새" />
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textFieldInputName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:hint="이름"
+                app:endIconMode="clear_text"
+                app:startIconDrawable="@drawable/pets_24px">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textFieldInputAge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:hint="나이"
+                app:endIconMode="clear_text"
+                app:startIconDrawable="@drawable/pets_24px">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:singleLine="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <TextView
+            android:id="@+id/textViewGender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="성별"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupInputGender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checkedButton="@id/radioButtonInputMale"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioButtonInputMale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:drawableStart="@drawable/male_24px"
+                android:text="수컷" />
+
+            <RadioButton
+                android:id="@+id/radioButtonInputFemale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:drawableStart="@drawable/female_24px"
+                android:text="암컷" />
+        </RadioGroup>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <TextView
+            android:id="@+id/textViewFood"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="좋아하는 간식"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroupInputFood"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipInputApple"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="사과" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipInputBanana"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="바나나" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipInputJujube"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="대추" />
+        </com.google.android.material.chip.ChipGroup>
+    </LinearLayout>
+
+</LinearLayout>
